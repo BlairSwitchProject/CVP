@@ -74,9 +74,9 @@ class CVPAPI():
         for hn, mac in self.switch_hn_mac.items():
             mac_addr = ('netElementId=' + str(mac))
             tasks_url = self.api_root + "/inventory/device/config"
-            cvp_inventory_response = requests.get(tasks_url, params=mac_addr, cookies=self.cookies, verify=False)
-            assert cvp_inventory_response.ok
-            switch_json = cvp_inventory_response.json()
+            cvp_config_response = requests.get(tasks_url, params=mac_addr, cookies=self.cookies, verify=False)
+            assert cvp_config_response.ok
+            switch_json = cvp_config_response.json()
             switch_config = switch_json['output']
             with open(hn, 'w') as config_data:
                 config_data.writelines(switch_config)
