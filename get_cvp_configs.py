@@ -10,7 +10,7 @@
 import requests
 import json
 requests.urllib3.disable_warnings()
-# The variables below are for access to the DMF controller. Eample:
+# The variables below are for access to the CVP server. Eample:
 # CVP_HOST = '10.1.1.1'
 # CVP_USER = 'admin'
 # CVP_PWD = 'pa55word'
